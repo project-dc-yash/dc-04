@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Preprocessing - IoT Anomaly Detection</title>
+    <style>
+        /* CSS Code Start (Copied from previous full code for styling consistency) */
+        :root {
+            --primary-color: #007BFF;
+            --secondary-color: #28a745;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --font-family: 'Arial', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+
+        /* Header & Navigation */
+        .navbar {
+            background: var(--dark-color);
+            color: var(--light-color);
+            padding: 1rem 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: var(--light-color);
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: var(--light-color);
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 5px 10px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero/Main Content Section Styling */
+        .section {
+            padding: 60px 0; /* Slightly more padding for a main page */
+            text-align: center;
+        }
+
+        .section h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            border-bottom: 4px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .content-box {
+            background: white;
+            padding: 30px 40px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .content-box h3 {
+            color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.75rem;
+        }
+
+        .content-box ul {
+            list-style: disc;
+            margin-left: 25px;
+            padding-left: 0;
+        }
+
+        .content-box li {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: var(--light-color);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            .navbar .container {
+                flex-direction: column;
+            }
+            .nav-links {
+                margin-top: 10px;
+            }
+            .nav-links a {
+                margin: 0 10px;
+            }
+            .section h1 {
+                font-size: 2.2rem;
+            }
+            .content-box {
+                padding: 20px;
+            }
+        }
+        /* CSS Code End */
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">IoTGuard 🤖</a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="#" style="color: var(--primary-color);">Preprocessing</a>
+                <a href="index.html#methods">Methods</a>
+                <a href="index.html#results">Results</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="preprocessing-details" class="section">
+        <div class="container">
+            <h1>🧹 Data Preprocessing Pipeline</h1>
+            
+            <div class="content-box">
+                <p>
+                    Effective **Anomaly Detection** relies heavily on clean, structured, and relevant data. IoT sensor streams often suffer from noise, missing data points, and inconsistent scaling. Our robust preprocessing pipeline is designed to transform raw sensor data into an optimal format for Machine Learning models.
+                </p>
+
+                <h3>1. Data Cleaning and Handling Missing Values</h3>
+                <ul>
+                    <li>**Noise Reduction:** We apply filtering techniques (like a moving average) to smooth out high-frequency sensor noise, ensuring the model focuses on systemic changes rather than random spikes.</li>
+                    <li>**Missing Data Imputation:** Missing timestamp values, which occur frequently in network transmissions, are handled using time-series specific imputation methods (e.g., forward-fill or interpolation).</li>
+                    <li>**Outlier Filtering:** While the goal is to *find* anomalies, non-systemic, extreme measurement errors (e.g., a momentary sensor failure) are identified and treated separately to prevent them from skewing the training phase.</li>
+                </ul>
+
+                <h3>2. Normalization and Scaling</h3>
+                <ul>
+                    <li>**Standardization:** Different sensors (temperature, pressure, vibration) have different units and scales. We use **Z-Score Normalization** to standardize features, giving them zero mean ($\mu=0$) and unit variance ($\sigma=1$). This ensures all features contribute equally to the distance metrics used by the anomaly models.</li>
+                    <li>**Time-Series Structuring:** Data is often aggregated into fixed-size windows (e.g., 5-minute intervals) and structured using **lagged features** to capture temporal dependencies, which is critical for time-series anomaly detection.</li>
+                </ul>
+
+                <h3>3. Feature Engineering</h3>
+                <ul>
+                    <li>**Statistical Features:** New features are calculated based on the data window, including the minimum, maximum, mean, and standard deviation of each sensor reading within that window.</li>
+                    <li>**Temporal Features:** We extract features like **day of the week** and **hour of the day** to capture natural, periodic variations in the IoT environment.</li>
+                </ul>
+            </div>
+            <a href="index.html" class="btn" style="margin-top: 30px; background: var(--dark-color);">← Back to Project Home</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 IoT Anomaly Detection Project | Data Preprocessing Focus</p>
+            <p>Contact: project@email.com</p>
+        </div>
+    </footer>
+
+</body>
+</html>

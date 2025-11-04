@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Anomaly Detection - Contact</title>
+    <style>
+        /* CSS Code Start (For all pages) */
+        :root {
+            --primary-color: #007BFF;
+            --secondary-color: #28a745;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --font-family: 'Arial', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+
+        /* Header & Navigation */
+        .navbar {
+            background: var(--dark-color);
+            color: var(--light-color);
+            padding: 1rem 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: var(--light-color);
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: var(--light-color);
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 5px 10px;
+            transition: color 0.3s;
+        }
+
+        /* Highlight the current page */
+        .nav-links a.active,
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section (Main Banner) - Not used on contact page, keeping selectors clean */
+
+        /* Section Styling */
+        .section {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 40px;
+            max-width: 600px;
+            margin: 30px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* Footer (Full content on contact page) */
+        .footer {
+            background: var(--dark-color);
+            color: var(--light-color);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            .navbar .container {
+                flex-direction: column;
+            }
+            .nav-links {
+                margin-top: 10px;
+            }
+            .nav-links a {
+                margin: 0 10px;
+            }
+            .contact-info {
+                padding: 25px;
+            }
+        }
+        /* CSS Code End */
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">IoTGuard 🤖</a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="methods.html">Methods</a>
+                <a href="results.html">Results</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="contact-main" class="section">
+        <div class="container">
+            <h2>📧 Get In Touch</h2>
+            <div class="contact-info">
+                <p>Thank you for your interest in the IoT Anomaly Detection Project.</p>
+                <p>For technical inquiries, collaboration, or a demonstration request:</p>
+                <p><strong>Email:</strong> <a href="mailto:project@email.com">project@email.com</a></p>
+                <p><strong>Project Lead:</strong> Data Science Team</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 IoT Anomaly Detection Project | Made with ❤️ for Data Science</p>
+            <p>Contact: project@email.com</p>
+        </div>
+    </footer>
+
+</body>
+</html>
